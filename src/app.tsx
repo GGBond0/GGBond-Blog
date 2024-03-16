@@ -1,7 +1,7 @@
 import { MetaProvider } from "@solidjs/meta";
 import { Router } from "@solidjs/router";
 import { FileRoutes } from "@solidjs/start/router";
-import { Suspense } from "solid-js";
+import { createSignal, onCleanup, createEffect, Suspense } from "solid-js";
 
 import { useAssets } from "solid-js/web";
 
@@ -66,7 +66,8 @@ export default function App() {
           <StyleRegistry styles={sheets}>
             <GlobalStyles />
             <a href="/">Index</a>
-            <a href="/about">About</a>
+            <a href="/article">Article</a>
+            <a href="/about">About Me</a>
             <Suspense>{props.children}</Suspense>
           </StyleRegistry>
         </MetaProvider>
